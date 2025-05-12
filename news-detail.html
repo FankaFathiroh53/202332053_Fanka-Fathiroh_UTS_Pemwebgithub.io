@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Detail - PT Bank Rakyat Indonesia (Persero) Tbk</title>
+  <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="image/judulbri-removebg-preview.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="image/judulbri-removebg-preview">
+    <meta name="msapplication-TileColor" content="#08306b">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #0d47a1;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #0d47a1;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    .news-image {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    #newsContent {
+      text-align: justify;
+      line-height: 1.6;
+    }
+
+    #newsContent p {
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* New Navigation Style */
+    .sub-nav {
+      background-color: #e0e0e0;
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .sub-nav a {
+      color: #0d47a1;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    .sub-nav a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>News Detail</h1>
+  </header>
+
+  <!-- Sub Navigation -->
+  <div class="sub-nav">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="news.html">News</a>
+    <a href="contact.html">Contact Us</a>
+  </div>
+
+  <main>
+    <a class="back-link" href="news.html">&laquo; Back</a>
+    <img id="newsImage" src="" alt="Gambar Berita" class="news-image" />
+    <h2 id="newsTitle">Memuat Berita...</h2>
+    <p><strong id="newsDate"></strong></p>
+    
+    <!-- Ganti tag <p> dengan <div> untuk menampung banyak paragraf -->
+    <div id="newsContent">Tunggu sebentar, sedang memuat konten berita.</div>
+  </main>
+
+  <footer>
+    &copy; 2025 PT. BRI (Persero) Tbk. All rights reserved.
+  </footer>
+
+  <script>
+    // Fungsi untuk membagi teks menjadi paragraf berdasarkan titik dua spasi
+    function splitToParagraphs(text) {
+      return text.split(/\s{2,}/).map(paragraph => paragraph.trim()).filter(Boolean);
+    }
+
+    // Simulasi database berita
+    const newsData = {
+      1: {
+        title: "Didukung BRI, Liga Kompas U-14 2024/2025 Jadi Ajang Bakat Muda",
+        date: "Rabu, 07 Mei 2025 | 11:25",
+        image: "image/berita1.jpeg",
+        content:
+          "<strong> Tangerang</strong> – Liga Kompas U-14 Powered by BRI musim 2024/2025 resmi ditutup hari ini di Indomilk Stadion, Tangerang, Banten, pada Minggu (4/5/2025). Mengusung semangat sportivitas dan komitmen terhadap pembinaan sepak bola usia muda, penutupan ini menjadi puncak dari rangkaian kompetisi yang tidak hanya melahirkan juara, tetapi juga membuka jalan bagi 18 pemain berbakat menuju panggung internasional di Gothia Cup 2025, Swedia.  Kemeriahan penutupan Liga Kompas U-14 Powered by BRI kian lengkap dengan hadirnya Corporate Secretary BRI Agustya Hendy Bernadi, Anggota Komite Eksekutif (Exco) PSSI Eko Setiawan, Asisten Deputi Olahraga Kemenpora Supeni Puddyastuti, serta Wakil Pemimpin Redaksi Harian Kompas Adi Prinatyo. Kehadiran mereka menjadi bentuk nyata dukungan lintas sektor terhadap pembinaan sepak bola usia dini di Indonesia.  Dalam sambutannya, Corporate Secretary BRI Agustya Hendy Bernadi menegaskan bahwa BRI berkomitmen mendukung pengembangan sepak bola nasional dari hulu ke hilir, mulai dari pembinaan usia dini, peningkatan kualitas kompetisi, hingga profesionalitas industri sepak bola.   Seperti diketahui, BRI telah konsisten mendukung kemajuan ekosistem industri sepak bola nasional pada beberapa tahun terakhir. Diantaranya adalah dukungan BRI sebagai titling sponsor pada kasta teratas kompetisi sepak bola di Indonesia yakni BRI Liga 1.   Dukungan tersebut telah berjalan selama empat musim berturut-turut yakni musim kompetisi 2021/2022, 2022/2023, 2023/2024, dan yang saat ini masih berjalan musim kompetisi 2024/2025. Dukungan tersebut tak lepas dari potensi ekonomi BRI Liga 1 yang terbilang besar. “Berdasarkan kajian BRI Research Institute pada Juli 2024, penyelenggaraan BRI Liga 1 berpotensi menciptakan perputaran uang (output ekonomi) bagi perekonomian Indonesia sebesar Rp10,42 Triliun. Dari perputaran uang tersebut, dapat tercipta nilai tambah ekonomi (PDB), tambahan pendapatan rumah tangga masyarakat, potensi pendapatan pajak, serta penciptaan kesempatan kerja sekitar 45 ribu orang”, ungkap Hendy.    Menandai penutupan musim, Liga Kompas U-14 Powered by BRI menghadirkan serangkaian agenda utama yang mencakup The Match, The Awards, serta Pekan Raya yang meliputi Football Expo, LKG Lounge, area Food & Beverage, serta sesi Coaching Clinic yang menghadirkan tokoh-tokoh sepak bola nasional.   The Match sebagai agenda puncak dalam Liga Kompas U-14 Powered by BRI 2024/2025 pun menjadi laga penentu gelar juara musim ini. Hasilnya, Babek SS berhasil mengukuhkan diri sebagai Juara 1, diikuti oleh Persigawa sebagai Juara 2, serta Young Warrior FA menempati posisi Juara 3.   Tak hanya menjadi penutup musim, momen ini juga diisi dengan The Awards yang menjadi ajang apresiasi bagi individu-individu berprestasi sepanjang kompetisi. Rayina Pamungkas dari Babek SS dinobatkan sebagai Top Scorer, sementara Fikri Pratama Gunawan dari Persigawa meraih predikat Best Goalkeeper dalam musim ini. Rangkaian Liga Kompas U-14 Powered by BRI juga menjadi bagian penting dari persiapan menuju ajang internasional Gothia Cup di Swedia pada Juli 2025.   Dengan berbagai program pembinaan yang dijalankan, Liga Kompas U-14 Powered by BRI diharapkan dapat terus menjadi wadah terbaik bagi talenta muda untuk berkembang, mengasah keterampilan, dan mendapatkan pengalaman bertanding yang kompetitif, serta membuka peluang lebih besar dalam meniti karier di dunia sepak bola profesional, baik di tingkat nasional maupun internasional.",
+      },
+      2: {
+        title: "Dorong Perputaran Ekonomi Grassroot, BRI Salurkan Kredit",
+        date: "Selasa, 06 Mei 2025 | 09:50",
+        image: "image/berita2.jpeg",
+        content:
+          "<strong> Jakarta</strong> – PT Bank Rakyat Indonesia (Persero) Tbk atau BRI terus mempertegas perannya sebagai motor penggerak ekonomi kerakyatan melalui pemberdayaan pelaku usaha mikro di seluruh penjuru Tanah Air. Hingga akhir Maret 2025, tercatat BRI berhasil menyalurkan kredit mikro sebesar Rp632,22 triliun.   Dengan porsi kredit Mikro mencapai sebesar 46,02% dari total portofolio pembiayaan dan kredit Perseroan yakni Rp1.373,66 triliun, capaian ini sekaligus mempertegas kontribusi BRI dalam mendukung Asta Cita Pemerintahan Presiden RI, khususnya Asta Cita Ketiga yang berfokus pada peningkatan lapangan kerja berkualitas dan penguatan kewirausahaan, serta Asta Cita Keenam yang menekankan pemerataan ekonomi dan pengentasan kemiskinan.   “Penyaluran kredit UMKM yang terus tumbuh positif tersebut juga diiringi oleh berbagai inisiatif untuk meningkatkan literasi dan inklusi keuangan. Salah satunya melalui AgenBRILink,” ujar Direktur Mikro BRI Akhmad Purwakajaya dalam paparannya pada Press Conference Paparan Kinerja Keuangan Triwulan I Tahun 2025 di Jakarta (30/4/2025).  Adapun, AgenBRILink sendiri telah menjadi salah satu motor utama dalam perluasan layanan keuangan BRI, di mana BRI menjalin kerja sama dengan nasabah sebagai agen/mitra yang dapat melayani transaksi perbankan bagi masyarakat secara real-time online dengan konsep sharing fee.   Tercatat, hingga akhir Maret 2025, jumlah AgenBRILink telah mencapai 1,2 juta agen, menunjukkan pertumbuhan yang signifikan dengan pertumbuhan sebesar 49,48% yoy. Agen-agen tersebut tersebar di lebih dari 67 ribu desa atau menjangkau lebih dari 88% dari total desa di Indonesia, serta mencatat volume transaksi sebesar Rp423 triliun di sepanjang Triwulan I 2025.   Lebih dari sekadar menyalurkan pembiayaan, BRI juga aktif memberikan edukasi dan pendampingan melalui berbagai program pemberdayaan seperti Desa BRILiaN, Klasterku Hidupku, Rumah BUMN hingga LinkUMKM, guna mendorong pelaku UMKM untuk naik kelas.   “Berbagai inisiatif BRI tersebut mempertegas komitmen BRI dalam memperkuat fondasi ekonomi kerakyatan dan berperan strategis dalam membuka lapangan kerja dan menurunkan tingkat kemiskinan di Indonesia,” jelas Akhmad.   Sebagai informasi, Direktur Micro BRI Akhmad Purwakajaya, yang diangkat pada Rapat Umum Pemegang Saham Tahunan (RUPST) BRI tanggal 24 Maret 2025 dapat melaksanakan tugas dan fungsi dalam jabatannya setelah mendapatkan persetujuan Penilaian Kemampuan dan Kepatutan OJK.",
+      },
+      3: {
+        title: "Fokus Pada Fundamental Kinerja, Ini Strategi BRI Untuk Tumbuh Berkelanjutan",
+        date: "Senin 05 Mei 2025 | 16:09",
+        image: "image/berita3.jpeg",
+        content:
+          "<strong> Jakarta</strong> - PT Bank Rakyat Indonesia (Persero) Tbk terus memperkuat fondasi bisnisnya di tengah dinamika ekonomi global. Di bawah kepemimpinan Direktur Utama BRI Hery Gunardi, perseroan menetapkan strategi pertumbuhan jangka panjang yang berfokus pada penguatan fundamental baik dari sisi pendanaan, penyaluran kredit yang berkualitas, peningkatan kapabilitas digital, penerapan manajemen risiko yang memadai hingga pengembangan sumber daya manusia. Strategi ini dijalankan sebagai bagian dari komitmen BRI untuk tumbuh secara sehat, berkelanjutan, dan inklusif, sekaligus menjawab tantangan dan peluang di seluruh segmen pasar.   Dalam Press Conference Kinerja Keuangan BRI Triwulan I 2025 yang digelar di Jakarta (30/04), Hery Gunardi menekankan salah satu strategi perseroan yakni penguatan struktur pendanaan utamanya melalui pertumbuhan dana murah atau CASA.   BRI harus memiliki kekuatan dari sisi pendanaan, khususnya CASA, baik saat ini maupun ke depan. Untuk itu, BRI mengakselerasi pertumbuhan CASA, mulai dari segmen konsumer, UMKM, hingga penguatan perolehan liabilities di segmen wholesale banking. BRI memiliki engine transaksi ritel yang sangat kuat melalui superapps BRImo, yang saat ini telah digunakan oleh lebih dari 40 juta nasabah, ujarnya.   Hery juga menyampaikan bahwa penguatan struktur pendanaan tidak bisa dilepaskan dari integrasi digital, produktivitas jaringan, dan sinergi bisnis di dalam ekosistem BRI.   BRI akan melakukan fine tuning terhadap UI dan UX super apps BRImo. Penguatan produktivitas juga dilakukan melalui pemanfaatan QRIS dan AgenBRILink yang berperan sebagai infrastruktur penting dalam mendukung peningkatan CASA BRI. Selain itu, sinergi dengan anak perusahaan seperti Pegadaian, PNM, dan lainnya akan terus diperkuat untuk membentuk sinergi yang saling mendukung dan mampu meningkatkan perolehan liabilities, khususnya tabungan dan giro, jelasnya.   BRI juga terus memperkuat solusi digital untuk nasabah korporasi melalui platform Qlola yang dirancang untuk mendukung kebutuhan transaksi secara terintegrasi. Platform ini menawarkan berbagai fitur yang memungkinkan nasabah menjalankan aktivitas keuangan dalam ekosistem BRI secara menyeluruh. Seiring dengan itu, BRI turut fokus pada pengembangan produk seperti KPR dan BRIguna (kredit berbasis payroll loan) sebagai bagian dari strategi diversifikasi kredit di luar segmen pembiayaan UMKM.   Pengembangan sumber daya manusia menjadi kunci dalam membangun organisasi yang adaptif dan berdaya saing.   Human capital menjadi fokus dari manajemen baru dimana BRI akan menempatkan individu-individu terbaik pada posisi yang tepat, the right man in the right place. Pengembangan human capital tidak hanya dilakukan melalui pelatihan di dalam negeri, tetapi juga melalui program pendidikan lanjutan di sekolah bisnis luar negeri,” ungkap Hery.   Manajemen risiko juga menjadi elemen integral dalam strategi ekspansi BRI. Hal ini penting untuk memastikan setiap inisiatif pertumbuhan tetap dilaksanakan secara prudent.   Risk management bukan sekadar fungsi kontrol yang mengatakan tidak terhadap risiko. Justru, pendekatan ini harus menjadi jalan untuk memahami dan mengelola risiko secara tepat agar bisnis tetap dapat tumbuh dan berkembang dengan sehat, tegas Hery.   Di tengah dinamika ekonomi global yang menantang, BRI Group mencatatkan kinerja yang baik di sepanjang Triwulan I 2025 dengan laba bersih sebesar Rp13,80 triliun dan aset mencapai Rp2.098,23 triliun, tumbuh 5,49% secara tahunan. Penyaluran kredit mencapai Rp1.373,66 triliun, dengan porsi UMKM sebesar 81,97 persen atau setara Rp1.126,02 triliun. Ke depan, BRI terus mengembangkan kapabilitasnya menuju universal banking yang memungkinkan layanan menyeluruh bagi seluruh segmen nasabah di Indonesia.   Sebagai informasi, Direktur Utama BRI Hery Gunardi diangkat pada Rapat Umum Pemegang Saham Tahunan tanggal 24 Maret 2025 dan dapat melaksanakan tugas dan fungsi dalam jabatannya setelah mendapatkan persetujuan Penilaian Kemampuan dan Kepatutan dari Otoritas Jasa Keuangan.",
+      },
+      4: {
+        title: "Dukung IPPA Fest 2025, BRI Kuatkan Peran Pemberdayaan Warga Binaan",
+        date: "Minggu, 04 Mei 2025 | 13:32",
+        image: "image/berita4.jpeg",
+        content:
+          "<strong> Jakarta</strong> - PT Bank Rakyat Indonesia (Persero) Tbk atau BRI terus memperkuat perannya dalam mendorong pembangunan ekonomi yang inklusif dan berkelanjutan melalui dukungannya pada penyelenggaraan Indonesian Prison Products and Arts Festival (IPPA Fest) 2025.   Acara ini diselenggarakan oleh Kementerian Imigrasi dan Pemasyarakatan (Kemenimipas) pada 21–23 April 2025 lalu di Lapangan Banteng, Jakarta Pusat, dengan mengusung tema “Creation Beyond the Bars” sebagai simbol semangat kreativitas tanpa batas.   “Perhelatan ini mengusung tema Creation Beyond the Bars yang memberikan sebuah pernyataan yang kuat bahwa kreativitas tidak pernah bisa dipenjara,” ucap Menteri Imipas Agus Andrianto saat membuka IPPA Fest di Jakarta, Senin.   Menurut Agus, IPPA Fest tidak hanya perayaan semata, tetapi juga refleksi atas perjalanan panjang Direktorat Jenderal Pemasyarakatan dalam membina warga binaan untuk kembali menjadi bagian dari masyarakat yang berdaya guna.   IPPA Fest 2025 merupakan festival berskala nasional yang menampilkan karya terbaik Warga Binaan Pemasyarakatan dari seluruh Indonesia. Melalui pendekatan pelatihan dan pengembangan keterampilan, acara ini menjadi sarana untuk memperlihatkan hasil karya bernilai ekonomi selama masa pembinaan. Keterlibatan BRI mencerminkan komitmen perusahaan dalam mendukung proses pengembangan keterampilan serta membuka akses terhadap peluang ekonomi yang lebih luas bagi warga binaan.   Pada kesempatan terpisah, Corporate Secretary BRI Agustya Hendy Bernadi menegaskan bahwa keterlibatan BRI dalam IPPA Fest 2025 merupakan bagian dari komitmen jangka panjang perusahaan dalam mendorong inklusi keuangan dan aspek sosial secara menyeluruh.   “BRI percaya bahwa setiap individu, termasuk warga binaan, memiliki potensi untuk berkembang jika diberi akses dan kesempatan yang setara. Melalui dukungan ini, BRI ingin memperkuat peran sebagai enabler dalam proses pemberdayaan, sekaligus mendorong terbukanya ruang-ruang baru bagi inklusi dan pertumbuhan ekonomi yang berkelanjutan.,” ujarnya.   Di samping itu, Partisipasi BRI dalam IPPA Fest 2025 menegaskan komitmen perseroan dalam mendorong pemberdayaan melalui akses keuangan, literasi, dan dukungan pasar, guna menciptakan economic value dan social value yang berkelanjutan bagi masyarakat.",
+      },
+      5: {
+        title: "Tren Gaya Hidup Sehat Kian Digemari, BRI Berdayakan UMKM Manfaatkan Peluang di Industri Gula Aren",
+        date: "Sabtu, 03 Mei 2025 | 13:30",
+        image: "image/berita5.jpeg",
+        content:
+          "<strong> Serang </strong> – Saat ini gaya hidup sehat semakin menjadi tren di masyarakat, mendorong permintaan terhadap produk pangan alami yang lebih sehat. Salah satu produk yang tengah diminati adalah gula aren, yang dikenal memiliki indeks glikemik lebih rendah dibandingkan gula pasir biasa.   PT Tangkal Kawung Indojaya, salah satu UMKM produsen gula aren asal Kelurahan Trondol, Kecamatan Serang, Kota Serang, Banten hadir dengan merek dagang Tangkal Kawung. Perusahaan ini menawarkan gula aren dalam dua varian, yaitu bubuk dan cair, untuk memenuhi kebutuhan pasar yang beragam.   Kami telah memproduksi gula aren sejak 2018 dalam dua bentuk, yakni bubuk dan cair. Saat ini, kami sedang memperkenalkan varian cair yang memiliki cita rasa lebih manis dengan kadar gula lebih rendah dibandingkan versi bubuk,” ujar Director PT Tangkal Kawung Indojaya, Adhe Shafitri ST MT, dalam sesi wawancara pada 9 Januari 2025 di ajang tersebut.   Adhe menjelaskan bahwa perbedaan utama antara gula aren bubuk dan cair terletak pada rasa dan kadar gula. “Gula aren bubuk memiliki kadar gula yang lebih tinggi, tetapi rasa manisnya lebih ringan. Sementara itu, gula aren cair menawarkan rasa manis yang lebih kuat dengan kadar gula yang lebih rendah,” jelasnya.   Tangkal Kawung menyediakan beragam pilihan kemasan untuk memenuhi kebutuhan pelanggan. Varian bubuk tersedia dalam kemasan 500 gram dan 5 kg, sedangkan varian cair hadir dalam kemasan 250 ml, 750 ml, 1 liter, dan 5 liter. Untuk konsumsi harian, banyak pelanggan memilih kemasan 250 ml yang dibanderol seharga Rp25 ribu hingga Rp30 ribu. Sementara itu, kemasan besar banyak diminati oleh pelaku bisnis seperti coffee shop, bakery, dan toko cookies.   Selain menyasar pasar ritel, Tangkal Kawung juga berfokus pada segmen B2B dengan menjalin kerja sama bersama pemilik kedai kopi dan toko roti. “Kami berharap dapat memperluas kerja sama dengan para pelaku usaha di industri F&B yang juga hadir di BRI UMKM EXPO(RT) 2025,” ujar Adhe.   Lebih lanjut, Tangkal Kawung juga tengah mempersiapkan langkah ekspansi ke pasar internasional. Saat ini, perusahaan membidik Korea Selatan sebagai target ekspor utama. “Kami melihat peluang di Korea cukup besar, terutama karena regulasi impornya lebih fleksibel dibandingkan Uni Eropa dan Amerika,” tambahnya.   Di pasar domestik, Tangkal Kawung telah memiliki pelanggan setia dari berbagai daerah, termasuk Aceh, Lampung, dan Surabaya. Melalui partisipasi dalam BRI UMKM EXPO(RT) 2025, perusahaan berharap dapat memperluas jangkauan pasar, meningkatkan brand awareness, serta menjalin kemitraan strategis dengan pelaku bisnis lainnya.   Selain tersedia secara offline di berbagai mitra usaha, produk Tangkal Kawung juga dapat dibeli melalui platform e-commerce seperti Tokopedia, Blibli, dan Shopee. Saat ini, omzet perusahaan berkisar antara Rp20 juta hingga Rp25 juta per bulan, dengan potensi pertumbuhan yang terus meningkat seiring dengan tren gaya hidup sehat di masyarakat.   Pada kesempatan terpisah, Corporate Secretary BRI Agustya Hendy Bernadi mengungkapkan bahwa langkah ini merupakan bagian dari strategi berkelanjutan BRI dalam mendorong UMKM Indonesia untuk terus bertumbuh dan menjadi pemain global.   Kisah sukses dari Tangkal Kawung merupakan bentuk dukungan nyata BRI untuk mendorong pengusaha UMKM go global yang diharapkan dapat mendorong pertumbuhan ekonomi nasional melalui ekspor produk lokal, ujar Hendy.   Untuk diketahui, gelaran BRI UMKM EXPO(RT) 2025 menjadi salah satu wujud komitmen BRI dalam mendorong lebih banyak UMKM binaan BRI untuk go international. Acara yang berlangsung pada 30 Januari-2 Februari 2025 lalu di ICE BSD City ini sukses dihadiri oleh lebih dari 69 ribu pengunjung, serta mencatatkan transaksi lebih dari Rp40 miliar dan realisasi kontrak ekspor mencapai US$90,6 juta atau sekitar Rp1,5 triliun.",
+      },
+      6: {
+        title: "Peringati Hardiknas, BRI Dukung Peningkatan Kualitas Pendidikan Indonesia Melalui BRI Peduli Ini Sekolahku",
+        date: "Jumat, 02 Mei 2025 | 08:46",
+        image: "image/berita6.jpeg",
+        content:
+          "<strong> Subang</strong> – Pendidikan merupakan salah satu aspek penting dalam membangun sumber daya manusia yang berkualitas, yang pada gilirannya akan mendorong kemajuan bangsa. Namun, kualitas pendidikan tidak hanya ditentukan oleh kualitas pengajaran dan kurikulum yang diterapkan semata, tetapi juga oleh sarana dan prasarana yang mendukung proses belajar mengajar.   BRI mengambil langkah nyata mendukung upaya pemerintah dalam mendorong kemajuan bangsa dengan menyediakan pendidikan yang berkualitas bagi anak bangsa melalui program BRI Peduli Ini Sekolahku. Hingga kini, program ini telah berjalan di 46 sekolah di seluruh Indonesia dengan sasaran penerimaan manfaat lebih dari 18.375 pelajar dan lebih dari 400 unit bangunan telah direnovasi.   Bantuan yang diberikan berupa pembangunan dan renovasi infrastruktur sekolah, beasiswa pendidikan serta bantuan sarana prasarana penunjang sekolah seperti perpusataan, toilet dan lapangan sekolah.   Selain bantuan inftrastruktur sekolah, BRI Peduli juga menyalurkan berbagai bantuan lainnya dalam rangka mendukung kegiatan belajar dan pengembangan siswa. Yang terbaru, dalam rangka Hari Pendidikan Nasional (Hardiknas) yang jatuh pada 2 Mei, BRI Peduli mengadakan sejumlah kegiatan di SDN 1 Sagalaherang yang terletak di Kecamatan Sagalaherang, Kab. Subang, Prov. Jawa Barat.   Berbagai kegiatan dilakukan di sekolah tersebut seperti story telling berupa dongeng bersama tokoh inspiratif yang berbagi pengalaman mereka dengan tema “Meraih Cita-cita”. Tujuan kegiatan ini adalah agar pelajar dapat termotivasi dengan baik dan terhibur.    Selain itu, diadakan pula kegiatan Cerdas Cermat yang bertujuan mengasah kecerdasan siswa dengan tema pendidikan umum serta kegiatan lomba pra karya siswa yang dirancang untuk mengasah kreativitas dan keterampilan sosial. BRI Peduli juga melaksanakan kegiatan penyaluran sembako bagi para guru dan tenaga pendidik.   Pada kesempatan terpisah, Corporate Secretary BRI Agustya Hendy Bernadi mengungkapkan bahwa Hardiknas yang selalu diperingati setiap tanggal 2 Mei menjadi pengingat bagi seluruh masyarakat Indonesia tentang pentingnya pendidikan dalam membangun peradaban, kemajuan bangsa, dan mencerdaskan kehidupan masyarakat.   Hardiknas juga menjadi pengingat pentingnya akses pendidikan yang merata dan berkualitas bagi seluruh anak bangsa. BRI Peduli Ini Sekolahku merupakan wujud nyata BRI mendukung terwujudnya pilar pembangunan dan tercapainya tujuan pembangunan berkelanjutan. Program ini diharapkan menjadi inisiator penopang, pemberdayaan masyarakat berbasis pendidikan di sekolah serta mampu mendorong pemerataan kualitas pendidikan di Indonsia.   Sejalan dengan Asta Cita pemerintah, program BRI Peduli Ini Sekolahku yang dijalankan ini diharapkan menjadi penopang dan pemberdayaan masyarakat berbasis pendidikan di sekolah serta mampu mendorong pemerataan kualitas pendidikan di Indonesia’’, ungkap Hendy.   Sebagai informasi, SDN 1 Sagalaherang merupakan salah satu sekolah penerima program BRI Peduli Ini Sekolahku pada 2024. Sebelum dilakukan renovasi, SDN 1 Segalaherang merupakan sekolah dengan dengan kondisi bangunan yang kurang layak. Ini terlihat dari bangunan sekolah tersebut seperti gedung yang rusak dan atap yang bocor karena usia bangunan sekolah yang telah lama.   Bantuan renovasi yang diberikan BRI Peduli membuat SDN 1 Sagalaherang menjadi sekolah yang indah, bersih dan nyaman. Bantuan renovasi diberikan dalam bentuk perbaikan bangunan dan sarana prasarana sekolah yang rusak, seperti kursi kelas, meja kelas, lemari kelas, atau peralatan pendukung pendidikan lainnya seperti perbaikan Ruang Guru, Ruang UKS dan Ruang Pustaka dan Toilet.   Ida Hartini (55) selaku Kepala Sekolah SDN 1 Sagalaherang mengatakan, siswa/i di sekolah tersebut saat ini menjadi bersemangat belajar dan betah di sekolah karena ruangan menjadi lebih nyaman. Para muridnya juga sangat bergembira karena mempunyai ruang perpustakaan baru.   Keadaan sekolah kami sebelumnya sangat tidak nyaman karena atap yang bocor dan kami belum punya ruang perpustakaan. Sekarang semua sudah berubah, sekolah sangat nyaman dan murid kami sangat termotivasi ke sekolah. Kami juga senag, BRI Peduli juga hadir di sekolah kami dalam memperingati Hardiknas dengan berbagai kegiatan bermanfaat dan memacu motivasi belajar siswa”, ungkapnya.   Hendy juga menegaskan, Program BRI Peduli Ini Sekolahku yang dilaksanakan BRI telah menghasilkan Indeks Penilaian Program menurut Guru dan Siswa berdasarkan 3 aspek yaitu Kualitas Pembelajaran mencapai 90.45%, Iklim Keamanan Sekolah 88,29%, Angka Partisipasi Sekolah 85,77%.   Selain itu, Indeks Persepsi Orang Tua mencapai 98,28% dengan kategori baik, yang menandakan bahwa orang tua telah menunjukkan tingkat penerimaan yang tinggi serta memberikan dukungan penuh kepada anak-anak mereka untuk bersekolah di sekolah yang berpartisipasi dalam program Ini Sekolahku.   Program ini juga menjadi wujud imlementasi program berkelanjutan yang tertuang dalam Sustainability Development Goals (SGD’s) pilar 4 (empat) tentang kualitas pendidikan. Dengan demikian, pendidikan pada akhirnya bukan hanya meningkatkan kualitas sumber daya manusia, namun dapat menghadirkan tumpuan dan kelanjutan hidup bangsa dan negara.",
+      },
+      7: {
+        title: "Umumkan Pemenang BRImo FSTVL 2024, Nasabah BRI Bawa Pulang Mobil BMW hingga Ribuan Tabungan Emas",
+        date: "Kamis, 01 Mei 2025 | 08:16",
+        image: "image/berita7.jpeg",
+        content:
+          "<strong> Jakarta</strong> – PT Bank Rakyat Indonesia (Persero) Tbk atau BRI terus memperkuat komitmennya dalam menghadirkan layanan digital unggulan melalui program loyalitas tahunan bertajuk BRImo FSTVL 2024. Program ini merupakan bentuk apresiasi terhadap loyalitas nasabah pengguna super apps BRImo, yang kini menjadi pilihan utama dalam memenuhi berbagai kebutuhan finansial secara digital.   Digelar sejak 1 Oktober 2024 hingga 31 Maret 2025, BRImo FSTVL menyediakan lebih dari 100.000 hadiah langsung melalui penukaran BRIpoin serta ribuan hadiah undian eksklusif bagi nasabah yang aktif meningkatkan saldo dan bertransaksi menggunakan BRImo.   Program ini tak hanya menjadi ajang penghargaan, tetapi juga mendorong pertumbuhan bisnis BRI secara signifikan. Tercatat, selama periode berlangsung saldo tabungan nasabah pengguna BRImo tumbuh 13.06% atau meningkat sekitar Rp26,5 triliun dan Jumlah User BRImo tumbuh 10,88%, atau dengan pertumbuhan jumlah user BRImo mencapai 2,9Juta User. BRI mengadakan pengundian hadiah utama pada Rabu, 30 April 2025 di Kantor Pusat BRI, Jl. Jenderal Sudirman, Jakarta. Pengundian dilakukan secara transparan dengan dihadiri oleh Direktur Network dan Retail Funding BRI Aquarius Rudianto dan disaksikan oleh perwakilan instansi terkait. Ribuan nasabah pengguna BRImo yang memenuhi syarat, yakni memiliki kupon undian aktif dan minimal 1.290 BRIpoin, berkesempatan memenangkan hadiah-hadiah spektakuler.   <strong>Daftar Hadiah Utama BRImo FSTVL 2024:</strong><br><ol>   <li>5 Unit BMW 520i M Sport</li> <li>20 Unit Hyundai Creta</li> <li>50 Unit Vespa Primavera</li> <li>75 Unit Samsung Galaxy Z Fold6</li> <li>1.000 Tabungan Emas senilai Rp5 juta</li>   Nasabah mendapatkan kupon undian berdasarkan setiap kelipatan rata-rata saldo Rp10 juta. Dengan sistem tiering, semakin tinggi peningkatan saldo nasabah, semakin besar pula peluang mereka untuk menang.   Terkait dengan hal tersebut, Direktur Network dan Retail Funding, Aquarius Rudianto mengungkapkan bahwa BRImo FSTVL merupakan bagian dari strategi BRI dalam memperkuat hubungan dengan nasabah sekaligus mendorong penggunaan layanan digital secara masif.   BRImo FSTVL bukan hanya sekadar program loyalitas, tetapi juga bagian dari strategi BRI untuk terus mendorong literasi dan inklusi keuangan melalui transformasi digital. Kami mengucapkan selamat kepada para pemenang dan mengajak seluruh nasabah untuk terus memanfaatkan BRImo dalam memenuhi kebutuhan finansial sehari-hari,” ujarnya.   Lebih lanjut, Aquarius menjelaskan bahwa keberhasilan BRImo FSTVL mencerminkan perubahan perilaku nasabah yang semakin mengandalkan kanal digital dalam bertransaksi. Hal ini selaras dengan fokus BRI dalam mengembangkan ekosistem digital perbankan yang mudah, cepat, aman, dan sesuai kebutuhan masyarakat Indonesia dari berbagai segmen.   Nasabah yang terpilih sebagai pemenang akan dihubungi langsung oleh unit kerja BRI pengelola rekening masing-masing. Daftar lengkap nama pemenang dapat diakses secara resmi melalui bbri.id/pemenangBRImoFSTVL2024 atau https://brimofstvl.bri.co.id/pemenang-2025. Di samping itu, BRI juga mengimbau kepada seluruh nasabah untuk selalu waspada terhadap segala bentuk penipuan. BRI menegaskan bahwa seluruh program undian tidak dipungut biaya apapun. Apabila terdapat pihak yang mengatasnamakan BRI dan meminta data pribadi atau pembayaran tertentu, nasabah diharapkan segera melapor melalui kanal resmi BRI.   Sebagai informasi Direktur Network & Retail Funding BRI Aquarius Rudianto yang diangkat pada Rapat Umum Pemegang Saham Tahunan (RUPST) tanggal 24 Maret 2025 dan dapat melaksanakan tugas dan fungsi dalam jabatannya setelah mendapatkan persetujuan Penilaian Kemampuan dan Kepatutan OJK.",
+      },
+    };
+
+    // Ambil ID dari URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const newsId = urlParams.get("id");
+
+    // Cek apakah data tersedia dan tampilkan
+    if (newsId && newsData[newsId]) {
+      document.getElementById("newsTitle").innerText = newsData[newsId].title;
+      document.getElementById("newsDate").innerText = newsData[newsId].date;
+      document.getElementById("newsImage").src = newsData[newsId].image;
+
+      const contentDiv = document.getElementById("newsContent");
+      contentDiv.innerHTML = ""; // Kosongkan dulu
+
+      // Pisahkan isi berita menjadi paragraf
+      const paragraphs = splitToParagraphs(newsData[newsId].content);
+
+      // Tambahkan setiap paragraf ke div
+      paragraphs.forEach(paragraph => {
+        const p = document.createElement("p");
+        p.innerHTML = paragraph;
+        contentDiv.appendChild(p);
+      });
+    } else {
+      document.getElementById("newsTitle").innerText = "Berita Tidak Ditemukan";
+      document.getElementById("newsDate").innerText = "";
+      document.getElementById("newsContent").innerHTML = "<p>Berita tidak tersedia atau ID tidak valid.</p>";
+      document.getElementById("newsImage").style.display = "none";
+    }
+  </script>
+</body>
+</html>

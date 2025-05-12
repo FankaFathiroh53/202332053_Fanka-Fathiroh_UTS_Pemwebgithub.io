@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - PT Bank Rakyat Indonesia (Persero) Tbk </title>
+  <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="image/judulbri-removebg-preview.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="image/judulbri-removebg-preview">
+    <meta name="msapplication-TileColor" content="#08306b">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    /* Header Styles */
+    header {
+      background-color: #003399; /* Warna biru solid yang jelas */
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    
+    .back-to-home {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 8px 15px;
+      border-radius: 4px;
+      text-decoration: none;
+      color: white;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-right: auto;
+    }
+    
+    .back-to-home:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+      color: #ffcc00;
+    }
+    
+    .back-to-home i {
+      margin-right: 8px;
+      font-size: 1.1rem;
+      color: #ffcc00;
+    }
+    
+    .header-main {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .header-left {
+      display: flex;
+      align-items: center;
+    }
+    
+    .header-logo {
+      margin-right: 15px;
+    }
+    
+    .header-logo img {
+      height: 35px; /* Mengurangi ukuran logo */
+      width: auto;
+    }
+    
+    .header-title {
+      text-align: left;
+      margin-left: 5px; /* Sedikit jarak dari logo */
+    }
+    
+    /* Gaya baru untuk judul Contact Center */
+    header h1 {
+      font-size: 2.2rem; /* Sedikit lebih kecil */
+      margin: 0;
+      font-weight: 800;
+      font-family: 'Arial', sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      background: linear-gradient(to right, #ffffff, #e6e6e6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      position: relative;
+    }
+    
+    header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background-color: #ffcc00;
+    }
+    
+    .header-subtitle {
+      font-size: 0.9rem;
+      margin-top: 10px;
+      font-style: italic;
+    }
+    
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+    
+    .contact-info {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 6px 12px;
+      border-radius: 4px;
+      margin-right: 12px;
+      transition: all 0.3s ease;
+    }
+    
+    .contact-info:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .contact-info i {
+      margin-right: 8px;
+      font-size: 1.1rem;
+      color: #ffcc00;
+    }
+    
+    .contact-info a {
+      font-weight: 600;
+      font-size: 1rem;
+      color: white;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    
+    .contact-info a:hover {
+      color: #ffcc00;
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 0 15px;
+      }
+      
+      .header-main {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .header-left {
+        flex-direction: column;
+        margin-bottom: 15px;
+      }
+      
+      .header-logo {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      
+      .header-title {
+        text-align: center;
+        margin-left: 0;
+      }
+      
+      header h1::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .header-right {
+        flex-direction: column;
+      }
+      
+      .contact-info {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      
+      .back-to-home {
+        margin: 0 auto 15px auto;
+      }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background-color: #e3f2fd;
+      padding: 15px 0;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #0d47a1;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 10px 15px;
+      border-radius: 6px;
+      transition: all 0.3s ease;
+    }
+
+    nav a.active,
+    nav a:hover {
+      background-color: #bbdefb;
+      border-radius: 6px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    h2 {
+      color: #0d47a1;
+      margin-bottom: 15px;
+    }
+
+    .faq-section {
+      margin-bottom: 30px;
+      display: none;
+    }
+
+    .faq-section.active {
+      display: block;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+    }
+
+    .faq-question {
+      font-size: 1.2rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      padding-right: 30px;
+    }
+
+    .faq-question::after {
+      content: "▶";
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%) rotate(90deg);
+      font-size: 1rem;
+      color: #0d47a1;
+      transition: transform 0.3s ease;
+    }
+
+    .faq-question.open::after {
+      transform: translateY(-50%) rotate(-90deg);
+    }
+
+    .faq-answer {
+      display: none;
+      margin-top: 10px;
+      padding-left: 20px;
+      animation: fadeIn 0.3s ease-in-out;
+    }
+
+    .faq-answer.show {
+      display: block;
+    }
+
+    .faq-answer ul,
+    .faq-answer ol {
+      padding-left: 20px;
+    }
+
+    .faq-answer p {
+      margin: 8px 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: #777;
+    }
+
+    @media (max-width: 600px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; max-height: 0; }
+      to { opacity: 1; max-height: 500px; }
+    }
+
+    /* WhatsApp Chat Section */
+    .whatsapp-chat-section {
+      background-color: #0d47a1; /* Warna latar belakang biru tua */
+      color: white;
+      padding: 50px 0;
+      position: relative;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: left; /* Rata kiri */
+      padding: 0 20px;
+    }
+
+    .whatsapp-chat-section h2 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      color: white;
+    }
+
+    .whatsapp-chat-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-start; /* Tombol rata kiri */
+      gap: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .btn-info {
+      background-color: #ff9800; /* Orange terang */
+      color: white;
+    }
+
+    .btn-primary {
+      background-color: #25d366; /* Hijau terang */
+      color: white;
+    }
+
+    .avatar-image {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      width: 200px;
+      height: 200px;
+      border-radius: 50%; /* Membuat gambar menjadi lingkaran */
+      object-fit: cover;
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-container">
+      <div class="header-top">
+        <a href="index.html" class="back-to-home">
+          <i class="fas fa-home"></i>
+          Back to home
+        </a>
+      </div>
+      <div class="header-main">
+        <div class="header-left">
+          <div class="header-logo">
+            <img src="image/logo white.png" alt="Logo BRI">
+          </div>
+          <div class="header-title">
+            <h1>Contact Center</h1>
+            <p class="header-subtitle">Layanan Nasabah 24 Jam</p>
+          </div>
+        </div>
+        <div class="header-right">
+          <div class="contact-info">
+            <i class="fas fa-phone-alt"></i>
+            <a href="tel:1500017">1500017</a>
+          </div>
+          <div class="contact-info">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:callbri@bri.co.id">callbri@bri.co.id</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- FAQ Sections -->
+  <main>
+    <nav>
+      <a href="#" class="active">Bantuan Akun</a>
+      <a href="#">Kartu Debit/Credit</a>
+      <a href="#">Transaksi</a>
+    </nav>
+
+    <!-- FAQ Section -->
+    <div id="bantuan-akun" class="faq-section active">
+      <div class="faq-item">
+        <h3 class="faq-question">1. Bagaimana cara melakukan enable/disable kartu via mobile banking/internet banking?</h3>
+        <div class="faq-answer">
+          <p>Dengan Internet Banking:</p>
+          <ol>
+            <li>Masuk ke menu Layanan Nasabah</li>
+            <li>Pilih Sub Menu Layanan Lain</li>
+            <li>Klik tulisan Disable/Enable Kartu</li>
+            <li>Pilih Rekening yang kartu ATM-nya akan di Blokir (apabila memiliki lebih dari 1 nomor rekening aktif)</li>
+            <li>Masukkan PIN Mobile Banking</li>
+            <li>Klik Kirim</li>
+          </ol>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">2. Bagaimana cara membuka akun rekening simpanan BRI?</h3>
+        <div class="faq-answer">
+          <p>Nasabah bisa datang ke kantor BRI terdekat dengan membawa:</p>
+          <ol>
+            <li>KTP yang berbasis NIK</li>
+            <li>NPWP (jika ada)</li>
+            <li>Setoran awal sesuai dengan jenis rekening yang diinginkan</li>
+          </ol>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">3. Saya lupa username/password (internet banking)</h3>
+        <div class="faq-answer">
+          <p>Hubungi Contact Center BRI <a href="tel:1500017">1500017</a> untuk mendapatkan bantuan.</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="kartu-debit-credit" class="faq-section">
+      <div class="faq-item">
+        <h3 class="faq-question">1. Bagaimana cara aktivasi kartu kredit?</h3>
+        <div class="faq-answer">
+          <h4>Melalui SMS</h4>
+          <ul>
+            <li>Untuk SMS Aktivasi dilakukan dengan cara SMS ke 99333 (Telkomsel dan Indosat) atau 9333 (operator selain Telkomsel, Indosat, XL/AXIS). Tarif Rp 550.</li>
+            <li>Format: <code>BRI AKT <spasi>NamaPadaKartu#6DigitTerakhirNomorKKBRI#8 DigitTanggalLahir(ddmmyyyy)</code></li>
+            <li>Contoh: <code>BRI AKT Alfian Martiansyah#123456#23031980</code></li>
+          </ul>
+          <h4>Melalui Contact Center</h4>
+          <ul>
+            <li>Nasabah dapat melakukan aktivasi kartu kredit baru melalui Contact Center <a href="tel:1500017">1500017</a> dan harus menghubungi dari nomor telephone (ponsel atau nomor kantor/rumah) yang terdaftar di sistem.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">2. Syarat pengajuan kartu kredit?</h3>
+        <div class="faq-answer">
+          <p>Syarat pengajuan kartu kredit meliputi:</p>
+          <ul>
+            <li>KTP yang berlaku</li>
+            <li>Slip gaji terakhir</li>
+            <li>Surat keterangan kerja dari perusahaan</li>
+            <li>Rekening koran 3 bulan terakhir</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="transaksi" class="faq-section">
+      <div class="faq-item">
+        <h3 class="faq-question">1. Ada transaksi yang tidak saya ketahui di rekening saya</h3>
+        <div class="faq-answer">
+          <p>Nasabah dapat melakukan pelaporan ke Contact Center BRI <a href="tel:1500017">1500017</a> atau mengunjungi Unit Kerja BRI terdekat.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">2. Kenapa transaksi saya gagal?</h3>
+        <div class="faq-answer">
+          <p>Beberapa alasan transaksi gagal meliputi:</p>
+          <ul>
+            <li>Saldo tidak mencukupi</li>
+            <li>Koneksi internet bermasalah</li>
+            <li>PIN salah</li>
+          </ul>
+        </div>
+      </div>
+      <div class="faq-item">
+        <h3 class="faq-question">3. Bertransaksi via Pay by QR?</h3>
+        <div class="faq-answer">
+          <p>Gunakan aplikasi BRImo atau BRImo+ untuk scan kode QR dan masukkan jumlah transaksi.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- WhatsApp Chat Section -->
+  <div class="whatsapp-chat-section">
+    <div class="container">
+      <h2>Yuk, ngobrol dengan Sabrina!</h2>
+      <p>Anda bisa menambahkan nomor official WhatsApp Business Account (08121214017)     di perangkatmu atau klik tombol di bawah ini untuk mulai chat melalui WhatsApp.</p>
+      <div class="button-container">
+        <a href="sabrina.html" class="btn btn-info">SIAPA SABRINA</a>
+        <a href="https://wa.me/628121214017 " target="_blank" class="btn btn-primary">CHAT SABRINA</a>
+      </div>
+    </div>
+    <!-- Avatar Sabrina -->
+    <div class="avatar-container">
+      <img src="image/kontak2.png" alt="Sabrina Avatar" class="avatar-image">
+      
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    &copy; 2025 PT. BRI (Persero) Tbk. All rights reserved.
+  </footer>
+
+  <!-- Script untuk FAQ Toggle -->
+  <script>
+    // FAQ Toggle
+    const faqQuestions = document.querySelectorAll('.faq-question');
+    faqQuestions.forEach(question => {
+      question.addEventListener('click', () => {
+        question.classList.toggle('open');
+        const answer = question.nextElementSibling;
+        answer.classList.toggle('show');
+      });
+    });
+
+    // Tab Navigation
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        navLinks.forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+
+        const sections = document.querySelectorAll('.faq-section');
+        sections.forEach(section => section.classList.remove('active'));
+
+        const targetId = link.textContent.trim().toLowerCase().replace(/\//g, '-').replace(/\s+/g, '-');
+        const targetSection = document.getElementById(targetId);
+        if (targetSection) {
+          targetSection.classList.add('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tanya Sabrina</title>
+  <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="image/judulbri-removebg-preview.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="image/judulbri-removebg-preview">
+    <meta name="msapplication-TileColor" content="#08306b">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+
+    header {
+      background: url('image/sabrinaheader.jpeg') no-repeat center center;
+      background-size: cover;
+      height: 150px;
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+      align-items: center;
+    }
+
+    .text-content {
+      flex: 1 1 500px;
+      max-width: 600px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    .sabrina-img {
+      flex: 0 0 300px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .sabrina-img img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .btn-back {
+      display: inline-block;
+      margin-top: 24px;
+      padding: 10px 16px;
+      background-color: #002F6C;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .btn-back:hover {
+      background-color: #014a9e;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .text-content, .sabrina-img {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header></header>
+
+  <div class="container">
+    <div class="text-content">
+      <h1>Tanya Sabrina</h1>
+      <p>
+        Hai, aku Sabrina, Asisten Virtual BRI yang bisa memberimu informasi mengenai produk-produk BRI, pertanyaan umum seputar layanan BRI, lokasi Kantor Cabang BRI terdekat, Info Promo Spesial dari BRI dan Info Lokasi Merchant-Merchant BRI. Hubungi Sabrina melalui 
+        <a href="https://wa.me/628121214017" target="_blank">WhatsApp 0812-1214-017</a>
+      </p>
+      <a href="contact.html" class="btn-back">← Back</a>
+    </div>
+
+    <div class="sabrina-img">
+      <img src="image/sabrina.png" alt="Sabrina">
+    </div>
+  </div>
+</body>
+</html>
