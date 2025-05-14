@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home - PT Bank Rakyat Indonesia (Persero) Tbk</title>
+  <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="image/judulbri-removebg-preview.png" type="image/png" sizes="32x32">
+    <link rel="apple-touch-icon" href="image/judulbri-removebg-preview.png" sizes="180x180">
+    <meta name="msapplication-TileImage" content="image/judulbri-removebg-preview">
+    <meta name="msapplication-TileColor" content="#08306b">
+  <style>
+    /* Base styles */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2f5;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    /* Header styles */
+    header {
+      background-image: linear-gradient(to right, #08306b, #0d47a1);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      transition: all 0.3s;
+      padding: 12px 0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    header.scrolled {
+      padding: 4px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .header-animation {
+      animation: slideInFromTop 0.5s ease-out forwards;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 16px;
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      transition: transform 0.3s;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .brand-text {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .brand-text {
+        display: block;
+      }
+    }
+
+    .brand-text h1 {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .brand-text p {
+      color: #cce3ff;
+      font-size: 12px;
+      margin: 0;
+    }
+
+    /* Navigation */
+    nav.desktop-nav {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      nav.desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+    }
+
+    nav.desktop-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    nav.desktop-nav a:hover {
+      color: #cce3ff;
+    }
+
+    nav.desktop-nav a::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: white;
+      transition: width 0.3s;
+    }
+
+    nav.desktop-nav a:hover::after {
+      width: 100%;
+    }
+
+    .mobile-menu-button {
+      display: block;
+      background: none;
+      border: none;
+      color: white;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    @media (min-width: 768px) {
+      .mobile-menu-button {
+        display: none;
+      }
+    }
+
+    .mobile-nav {
+      background-color: #0a3d82;
+      display: none;
+      transition: all 0.3s;
+    }
+
+    .mobile-nav.open {
+      display: block;
+    }
+
+    .mobile-nav-container {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      padding: 8px 16px;
+    }
+
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    .mobile-nav a:hover {
+      background-color: #08306b;
+    }
+
+    /* Slider - MODIFIED FOR MOBILE RESPONSIVENESS */
+    .slider {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      /* Changed from fixed height to aspect ratio approach */
+      height: auto;
+      aspect-ratio: 16/9; /* Desktop aspect ratio */
+    }
+    
+    @media (max-width: 768px) {
+      .slider {
+        aspect-ratio: 4/3; /* More square aspect ratio for mobile */
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .slider {
+        aspect-ratio: 1/1; /* Even more square for very small screens */
+      }
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .slide.active {
+      opacity: 1;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain; /* Changed from cover to contain to prevent cropping */
+    }
+    
+    /* Optional: If you want to maintain some cropping but ensure important parts are visible */
+    @media (min-width: 769px) {
+      .slide img {
+        object-fit: cover; /* Use cover on larger screens */
+        object-position: center; /* Ensure center of image is visible */
+      }
+    }
+
+    /* Banner */
+    .banner {
+      text-align: center;
+      background-color: #e3f2fd;
+      padding: 40px 20px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 1s;
+    }
+
+    .banner.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .banner h1 {
+      margin-bottom: 10px;
+    }
+
+    /* Promo List */
+    .promo-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 1s;
+    }
+
+    .promo-list.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .promo-item {
+      background-color: white;
+      flex: 0 0 calc(100% - 20px);
+      max-width: calc(100% - 20px);
+      box-sizing: border-box;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.7s;
+    }
+
+    .promo-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (min-width: 576px) {
+      .promo-item {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .promo-item {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+      }
+    }
+
+    .promo-item img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      background-color: #f9f9f9;
+      padding: 5px;
+    }
+
+    .promo-item h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: #ff0000;
+      font-size: 16px;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .promo-item h3 a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .promo-item p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    .promo-detail {
+      display: none;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #666;
+      flex-grow: 1;
+    }
+
+    .btn-toggle {
+      background-color: #08306b;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: auto;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+
+    .btn-toggle:hover {
+      background-color: #0d47a1;
+    }
+
+    /* Why BRI */
+    .why-bri {
+      padding: 40px 20px;
+      margin-top: 20px;
+      margin-bottom: 100px;
+      background-image: url('image/bghome.jpg');
+      background-color: #f9f9f9;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 12px;
+      color: #333;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 1s;
+    }
+
+    .why-bri.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .why-bri h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .why-bri p {
+      margin-bottom: 30px;
+    }
+
+    .why-bri-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .why-bri-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .why-bri-item {
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transform: translateX(10px);
+      transition: all 0.7s;
+    }
+
+    .why-bri-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .why-bri-item img {
+      width: 50px;
+      height: 50px;
+      margin-right: 20px;
+    }
+
+    .why-bri-item h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+
+    .why-bri-item p {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+
+    /* Footer */
+    .footer {
+      background-color: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 20px;
+    }
+
+    /* Animations */
+    @keyframes slideInFromTop {
+      from {
+        transform: translateY(-20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Delay classes for staggered animations */
+    .delay-100 { transition-delay: 100ms; }
+    .delay-200 { transition-delay: 200ms; }
+    .delay-300 { transition-delay: 300ms; }
+    .delay-400 { transition-delay: 400ms; }
+    .delay-500 { transition-delay: 500ms; }
+    .delay-600 { transition-delay: 600ms; }
+    .delay-700 { transition-delay: 700ms; }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header-animation">
+    <div class="container header-container">
+      <div class="logo-container">
+        <img src="image/logo white.png" alt="Logo BRI" class="logo">
+        <div class="brand-text">
+          <h1>Bank Rakyat Indonesia</h1>
+          <p>Melayani Dengan Setulus Hati</p>
+        </div>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="news.html">News</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <button class="mobile-menu-button" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <div class="mobile-nav">
+    <div class="container mobile-nav-container">
+      <a href="index.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="news.html">News</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Slider - MODIFIED FOR MOBILE RESPONSIVENESS -->
+  <div class="slider">
+    <div class="slide active">
+      <img src="image/home1.jpeg" alt="Slider Image 1">
+    </div>
+    <div class="slide">
+      <img src="image/home2.jpeg" alt="Slider Image 2">
+    </div>
+    <div class="slide">
+      <img src="image/home3.jpg" alt="Slider Image 3">
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div class="banner" id="banner">
+    <h1>SELAMAT DATANG</h1>
+    <p>BRI Memberikan pelayanan perbankan terbaik sejak 1895, kini hadir lebih modern dan dekat dengan Anda.</p>
+  </div>
+
+  <!-- Promo List -->
+  <div class="promo-list" id="promo-list">
+    <div class="promo-item" data-delay="0">
+      <img src="image/sogo.jpeg" alt="Promo Spesial Sogo Thursday">
+      <h3>
+        <a href="detailsogo.html">
+          Promo Spesial Sogo Thursday
+        </a>
+      </h3>
+      <p><strong>08 Mei 2025 – 31 Juli 2025</strong></p>
+      <div class="promo-detail">
+        <p>Promo Menggunakan: BRI Prioritas, BRI Easy Card, BRI Platinum, BRI JCB Platinum, BRI Wonderful Indonesia, BRI World Access, BRI Touch, BRI Bussiness Card, BRI Infinite, BRI Corporate Card, Debit BRI, BRI Private</p>
+      </div>
+      <button class="btn-toggle">Selengkapnya</button>
+    </div>
+
+    <div class="promo-item" data-delay="100">
+      <img src="image/ferragamo.jpeg" alt="Promo Spesial Ferragamo">
+      <h3>
+        <a href="detailferragamo.html">
+          Promo Spesial Ferragamo
+        </a>
+      </h3>
+      <p><strong>08 Mei 2025 – 14 Mei 2025</strong></p>
+      <div class="promo-detail">
+        <p>Promo Menggunakan: BRI Easy Card, BRI Platinum, BRI JCB Platinum, BRI Wonderful Indonesia, BRI World Access, BRI Touch, BRI Bussiness Card, BRI Infinite, BRI Corporate Card, Debit BRI</p>
+      </div>
+      <button class="btn-toggle">Selengkapnya</button>
+    </div>
+
+    <div class="promo-item" data-delay="200">
+      <img src="image/myfeet.jpeg" alt="Promo Spesial MyFeet">
+      <h3>
+        <a href="detailmyfeet.html">
+          Promo Spesial MyFeet
+        </a>
+      </h3>
+      <p><strong>08 Mei 2025 – 18 Mei 2025</strong></p>
+      <div class="promo-detail">
+        <p>Promo Menggunakan: QRIS, BRImo</p>
+      </div>
+      <button class="btn-toggle">Selengkapnya</button>
+    </div>
+
+    <div class="promo-item" data-delay="300">
+      <img src="image/kopi.jpeg" alt="Promo Spesial Rabu Ceria">
+      <h3>
+        <a href="detailkopi.html">
+          Promo Spesial Rabu Ceria Waroeng Kopi dan Alun-Alun Indonesia
+        </a>
+      </h3>
+      <p><strong>07 Mei 2025 – 28 Mei 2025</strong></p>
+      <div class="promo-detail">
+        <p>Promo Menggunakan: BRI Easy Card, BRI Platinum, BRI JCB Platinum, BRI Wonderful Indonesia, BRI World Access, BRI Touch, BRI Bussiness Card, BRI Infinite, BRI Corporate Card, Debit BRI</p>
+      </div>
+      <button class="btn-toggle">Selengkapnya</button>
+    </div>
+
+    <div class="promo-item" data-delay="400">
+      <img src="image/adelle.jpeg" alt="Promo Spesial Adelle Jewellery">
+      <h3>
+        <a href="detailadelle.html">
+          Promo Spesial Adelle Jewellery
+        </a>
+      </h3>
+      <p><strong>06 Mei 2025 – 05 Juni 2025</strong></p>
+      <div class="promo-detail">
+        <p>Promo Menggunakan: BRI Easy Card, BRI Platinum, BRI JCB Platinum, BRI Wonderful Indonesia, BRI World Access, BRI Touch, BRI Bussiness Card, BRI Infinite, BRI Corporate Card, Debit BRI</p>
+      </div>
+      <button class="btn-toggle">Selengkapnya</button>
+    </div>
+
+    <div class="promo-item" data-delay="500">
+      <img src="image/setia.jpeg" alt="Promo Spesial Setia Budhi Supermarket">
+      <h3>
+        <a href="detailsetia.html">
+          Promo Spesial Setia Budhi Supermarket
+        </a>
+      </h3>
+      <p><strong>09 Mei 2025 – 31 Juli 2025</strong></p>
+      <div class="promo-detail">
+        <p>Promo Menggunakan: EDC BRI</p>
+      </div>
+      <button class="btn-toggle">Selengkapnya</button>
+    </div>
+  </div>
+
+  <!-- Mengapa Memilih BRI -->
+  <div class="why-bri" id="why-bri">
+    <h2>Mengapa Memilih BRI</h2>
+    <p>
+      Melayani lebih dari 129 tahun, Bank BRI senantiasa memberikan kemudahan dan kecepatan dalam merespon berbagai kebutuhan nasabah dengan layanan perbankan yang prima.
+    </p>
+    <div class="why-bri-grid">
+      <div class="why-bri-item" data-delay="0">
+        <img src="image/produk1.png" alt="Produk Lengkap">
+        <div>
+          <h3>Produk Lengkap</h3>
+          <p>
+            Produk dan Layanan Bank BRI lengkap dan beragam untuk semua segmen sesuai kebutuhan nasabah.
+          </p>
+        </div>
+      </div>
+      <div class="why-bri-item" data-delay="150">
+        <img src="image/jaringan2.png" alt="Jaringan Terbesar">
+        <div>
+          <h3>Jaringan Terbesar</h3>
+          <p>
+            Jaringan Bank BRI terbesar dan terluas secara real-time online di seluruh Indonesia.
+          </p>
+        </div>
+      </div>
+      <div class="why-bri-item" data-delay="300">
+        <img src="image/human2.png" alt="Human Capital Kompeten">
+        <div>
+          <h3>Human Capital Kompeten</h3>
+          <p>
+            Human Capital Bank BRI yang kompeten dan profesional siap melayani nasabah dengan setulus hati.
+          </p>
+        </div>
+      </div>
+      <div class="why-bri-item" data-delay="450">
+        <img src="image/inovasi2.png" alt="Terus Berinovasi">
+        <div>
+          <h3>Terus Berinovasi</h3>
+          <p>
+            Bank BRI terus berinovasi mengembangkan produk yang sesuai dengan perkembangan jaman untuk memenuhi kebutuhan nasabah.
+          </p>
+        </div>
+      </div>
+      <div class="why-bri-item" data-delay="600">
+        <img src="image/gcg2.png" alt="GCG yang Prudent">
+        <div>
+          <h3>GCG yang Prudent</h3>
+          <p>
+            Bank BRI menerapkan GCG yang prudent demi menjamin keberlangsungan usaha yang baik.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>© 2025 PT. Bank Rakyat Indonesia (Persero) Tbk. All Rights Reserved.</p>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const mobileMenuButton = document.querySelector('.mobile-menu-button');
+    const mobileNav = document.querySelector('.mobile-nav');
+    let mobileMenuOpen = false;
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenuOpen = !mobileMenuOpen;
+      if (mobileMenuOpen) {
+        mobileNav.classList.add('open');
+        mobileMenuButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        `;
+      } else {
+        mobileNav.classList.remove('open');
+        mobileMenuButton.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        `;
+      }
+    });
+
+    // Slider functionality
+    const slides = document.querySelectorAll('.slide');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach(slide => {
+        slide.classList.remove('active');
+      });
+      slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    // Auto-slide every 3 seconds
+    setInterval(nextSlide, 3000);
+
+    // Toggle promo details
+    document.querySelectorAll('.btn-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const detail = button.previousElementSibling;
+        if (detail.style.display === 'none' || detail.style.display === '') {
+          detail.style.display = 'block';
+          button.textContent = 'Sembunyikan';
+        } else {
+          detail.style.display = 'none';
+          button.textContent = 'Selengkapnya';
+        }
+      });
+    });
+
+    // Scroll animations using Intersection Observer
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    // Banner animation
+    const bannerObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        document.getElementById('banner').classList.add('visible');
+      }
+    }, observerOptions);
+
+    bannerObserver.observe(document.getElementById('banner'));
+
+    // Promo list animation
+    const promoListObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        const promoList = document.getElementById('promo-list');
+        promoList.classList.add('visible');
+        
+        // Staggered animation for promo items
+        const promoItems = document.querySelectorAll('.promo-item');
+        promoItems.forEach(item => {
+          setTimeout(() => {
+            item.classList.add('visible');
+          }, parseInt(item.getAttribute('data-delay')) || 0);
+        });
+      }
+    }, observerOptions);
+
+    promoListObserver.observe(document.getElementById('promo-list'));
+
+    // Why BRI section animation
+    const whyBriObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        const whyBri = document.getElementById('why-bri');
+        whyBri.classList.add('visible');
+        
+        // Staggered animation for why-bri items
+        const whyBriItems = document.querySelectorAll('.why-bri-item');
+        whyBriItems.forEach(item => {
+          setTimeout(() => {
+            item.classList.add('visible');
+          }, parseInt(item.getAttribute('data-delay')) || 0);
+        });
+      }
+    }, observerOptions);
+
+    whyBriObserver.observe(document.getElementById('why-bri'));
+
+    // Header scroll effect
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('header');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
+</body>
+</html>
